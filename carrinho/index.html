@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>Carrinho</title>
+</head>
+<body>
+    <div ng-app="myShoppingList" ng-controller="myCtrl">
+        <ul>
+            <li ng-repeat="x in products">
+                {{x}}
+                <span ng-click="removeItem($index)">&times;</span>
+            </li><!--Para percorrer um loop-->
+            
+        </ul>
+        <input ng-model="item">
+        <button ng-click="addItem()">Adicionar no carrinho!</button>
+      </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script> 
+    <script src="carrinho.js"></script>
+        
+</body>

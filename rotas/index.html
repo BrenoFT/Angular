@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Angular</title>
+</head>
+<body ng-app="myApp">
+
+    <p><a href="#/!">Main</a></p>
+    
+    <a href="#!red">Red</a>
+    
+    <div ng-view></div>
+    <!--
+    <div ng-app="myApp" ng-controller="myCtrl">
+
+        <div ng-bind-html="resposta">
+
+        </div>
+        
+    </div>
+
+    <div ng-app="myApp" ng-controller="myCtrl">
+
+        <p>The name is {{ lastName | uppercase }}</p>
+        
+    </div>
+    -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>    
+    <script>
+
+        var app = angular.module("myApp", ["ngRoute"]);
+        app.config(function($routeProvider) {
+        $routeProvider
+        .when("/", {
+            templateUrl : "ajax.html"
+        })
+        .when("/red", {
+            templateUrl : "red.html"
+        })
+        });
+
+        /*var app = angular.module('myApp', []);
+        app.controller('myCtrl', function($scope, $http, $sce) {
+        
+            $scope.lastName = "Breno";
+            
+        $http({
+            method : "GET",
+            url : "ajax.html"
+        }).then(function mySuccess(response) {
+            $scope.resposta = $sce.trustAsHtml(response.data);  //Para representar como html $sce.trustAsHtml
+        }, function myError(response) {
+            $scope.resposta = response.statusText;
+        });
+        
+        });*/
+    </script>   
+
+</body>
+</html>
